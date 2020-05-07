@@ -1,0 +1,5 @@
+MESSAGE_INTERVAL = 1.0    #in seconds
+
+WMI_SENSOR_NAME = "CPU Core"
+
+END_POINT_ADDRESS = "http://127.0.0.1:5500"
