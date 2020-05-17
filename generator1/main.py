@@ -10,10 +10,7 @@ from model.temperature_data import TemperaturData
 temperatureGenerator = FakeTemperatureGenerator()
 messageHandler = MessageHandler()
 
-start_time = time.time()
 while True:
     time.sleep(constants.MESSAGE_INTERVAL)
     temperature = temperatureGenerator.getCurrentTemperature()
-    print(temperature)
-    print(TemperaturData(temperature).toJson())
-    messageHandler.send(TemperaturData(temperature).toJson())   #still needs some fixing
+    messageHandler.send(TemperaturData(temperature).toJson())   

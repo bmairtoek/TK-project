@@ -19,7 +19,7 @@ namespace Generator2
                 double temperature = temperatureGenerator.GetCurrentTemperature();
                 Console.WriteLine(temperature);
                 Console.WriteLine(new TemperatureModel(temperature).ToJson());
-                messageHandler.Send(new TemperatureModel(temperature).ToJson());   //still needs some fixing
+                messageHandler.Send(new TemperatureModel(temperature).ToJson());  
             }
         }
     }

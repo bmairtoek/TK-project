@@ -6,7 +6,7 @@ namespace Generator2.Model
 {
     interface IModel
     {
-        object Value
+        object value
         {
             get; 
             set;
