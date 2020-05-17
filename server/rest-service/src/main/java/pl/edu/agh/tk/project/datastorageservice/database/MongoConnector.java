@@ -10,24 +10,28 @@ import pl.edu.agh.tk.project.datastorageservice.model.TemperatureMeasurement;
 
 public class MongoConnector {
 
+    private final String DB_HOST_NAME = "mongo";
+    private final String DB_NAME = "dataStorageAppDB1";
+    private final String DB_COLLECTION_NAME = "measurements_temperature";
+
     private Logger logger = LoggerFactory.getLogger(MongoConnector.class);
 
     private MongoClient mongoClient = null;
 
     public void insertToDB(TemperatureMeasurement temperatureMeasurement) {
-        MongoClient mongoClient = getMongoClient();
-        MongoDatabase mongoDatabase = mongoClient.getDatabase("dataStorageAppDB");
+        MongoClient mongoClient = getMongoClient(DB_HOST_NAME);
+        MongoDatabase mongoDatabase = mongoClient.getDatabase(DB_NAME);
 
-        MongoCollection<BasicDBObject> collection = mongoDatabase.getCollection("measurements_temperature", BasicDBObject.class);
+        MongoCollection<BasicDBObject> collection = mongoDatabase.getCollection(DB_COLLECTION_NAME, BasicDBObject.class);
         BasicDBObject document = prepareDocument(temperatureMeasurement);
 
         collection.insertOne(document);
         logger.info("Inserted to database: " + document.toString());
     }
 
-    private MongoClient getMongoClient() {
+    private MongoClient getMongoClient(String dbName) {
         if (mongoClient == null) {
-            mongoClient = new MongoClient();
+            mongoClient = new MongoClient(dbName);
         }
         return mongoClient;
     }
