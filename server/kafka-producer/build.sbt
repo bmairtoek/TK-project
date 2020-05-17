@@ -15,8 +15,10 @@ libraryDependencies ++= {
     "org.apache.kafka" % "kafka-clients" % kafkaVesion,
 //    "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
     "org.mongodb.scala" %% "mongo-scala-driver" % "2.2.1",
+    "com.typesafe" % "config" % "1.2.1",
 
-//   logging
+
+  //   logging
     "org.apache.logging.log4j" %% "log4j-api-scala" % "11.0",
     "org.apache.logging.log4j" % "log4j-api" % "2.11.0",
     "org.apache.logging.log4j" % "log4j-core" % "2.11.0" % Runtime,
