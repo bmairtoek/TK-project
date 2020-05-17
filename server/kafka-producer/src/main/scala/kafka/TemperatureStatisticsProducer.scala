@@ -6,14 +6,14 @@ import org.apache.kafka.clients.producer.ProducerRecord
 import org.apache.logging.log4j.scala.Logging
 
 
-class TemperatureStatisticsProducer extends Actor with KafkaProduzer with Logging {
+class TemperatureStatisticsProducer extends Actor with TempStatisticsKafkaProducer with Logging {
   override def receive: Receive = {
-    case TemperatureStatistic(topic, senz) =>
+    case TemperatureStatistic(topic, message) =>
 
-      val record = new ProducerRecord[String, String](topic, senz)
+      val record = new ProducerRecord[String, String](topic, message)
       producer.send(record)
 
-      logger.info(s"Produced message $senz to $topic")
+      logger.info(s"Produced message $message to $topic")
   }
 }
 

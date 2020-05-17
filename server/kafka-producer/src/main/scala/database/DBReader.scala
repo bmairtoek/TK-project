@@ -4,10 +4,11 @@ import database.DBReader.getMongoClient
 import database.Helpers._
 import org.mongodb.scala._
 import org.mongodb.scala.bson.BsonDocument
+import utils.ConfigUtils
 
-class DBReader {
-  def getMeanTemp() = {
-    val tempValues = findCollection("dataStorageAppDB", "measurements_temperature")
+class DBReader extends ConfigUtils {
+  def getMeanTemp(): Double = {
+    val tempValues = findCollection(fromConfig("tempDatabase"), fromConfig("collectionName"))
     calculateMeanValue(tempValues, "value")
   }
 
@@ -24,9 +25,11 @@ class DBReader {
   }
 }
 
-object DBReader {
-  val mongoClient: MongoClient = MongoClient()
+object DBReader extends ConfigUtils {
+  val mongoClient: MongoClient = MongoClient("mongodb://"
+    .concat(fromConfig("mongoHost"))
+    .concat(":")
+    .concat(fromConfig("mongoPort")))
 
   def getMongoClient: MongoClient = mongoClient
-
 }
