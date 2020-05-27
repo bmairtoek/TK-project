@@ -3,12 +3,12 @@
 
 
 ## Run instruction
-####Server:
-#####Prerequisites
+#### Server:
+##### Prerequisites
 ``Maven``
 ``sbt``
 
-#####Commands to run: 
+##### Commands to run: 
 ``cd server && ./run.sh``
 
 This command will build both server components: ``kafka-producer`` and ``rest-server``. 
