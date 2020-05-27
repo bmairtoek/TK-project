@@ -7,6 +7,7 @@
 ##### Prerequisites
 ``Maven``
 ``sbt``
+``Docker``
 
 ##### Commands to run: 
 ``cd server && ./run.sh``
