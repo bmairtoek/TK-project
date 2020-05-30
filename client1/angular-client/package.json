@@ -19,8 +19,10 @@
     "@angular/platform-browser": "~9.1.9",
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
+    "kafkajs": "^1.12.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
+    "zlib": "^1.0.5",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -42,5 +44,15 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
+  },
+  "browser": {
+    "http": false,
+    "https": false,
+    "net": false,
+    "path": false,
+    "stream": false,
+    "tls": false,
+    "crypto": false,
+    "zlib": false
   }
 }
