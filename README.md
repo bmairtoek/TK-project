@@ -15,3 +15,12 @@
 This command will build both server components: ``kafka-producer`` and ``rest-server``. 
 After that it will prepare docker images, compose them and run server with containers ports bound to host.
 
+##### Commands for running clients and generators:
+Generator1:
+``python ./generator1/main.py``
+Generator2:
+``./generator2/Generator2/MakeAndRun``
+Client1:
+``./client1/MakeAndRun``
+Client2:
+``python ./client2/client.py``
