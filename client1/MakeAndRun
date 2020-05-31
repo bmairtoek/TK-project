@@ -1,0 +1,3 @@
+#!/bin/bash
+gcc consumer.c -lrdkafka -o consumer.exe
+./consumer.exe localhost:9092 cClient temp
