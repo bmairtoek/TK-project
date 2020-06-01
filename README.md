@@ -24,3 +24,11 @@ Client1:
 ``./client1/MakeAndRun``
 Client2:
 ``python ./client2/client.py``
+
+#### Required packeges
+``librdkafka`` more information in client1 readme
+``.NET Core`` more information in generator2 readme
+
+#### Python dependencies
+``kafka-python``
+``wmi`` only when using real temperature data
